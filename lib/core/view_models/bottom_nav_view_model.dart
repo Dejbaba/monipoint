@@ -13,6 +13,7 @@ class BottomNavViewModel extends ChangeNotifier{
     _currentIndex = value;
   }
 
+  ///shows/hides click effect on bottom nav icons
   bool _showNavEffect = false;
   bool get showNavEffect => _showNavEffect;
 
@@ -40,7 +41,6 @@ class BottomNavViewModel extends ChangeNotifier{
         duration: Duration(milliseconds: 600),
         child: Container(color: Colors.blue,))
   ];
-
   List<Widget> get children => _children;
 
 
@@ -50,10 +50,12 @@ class BottomNavViewModel extends ChangeNotifier{
     notifyListeners();
   }
 
+  ///resets current index value
   resetValues(){
     _currentIndex = 0;
   }
 
+  ///updates 'showNavEffect' value
   updateState(){
     _showNavEffect = !showNavEffect;
     notifyListeners();
